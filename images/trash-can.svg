@@ -9,13 +9,13 @@
             fill: #000000; <!-- Tires -->
             }
             .cls-3 {
-            fill: #198041; <!-- Border -->
+            fill: #COLOR_2; <!-- Border -->
             }
             .cls-4 {
-            fill: #115629; <!-- support -->
+            fill: #COLOR_4; <!-- support -->
             }
             .cls-5 {
-            fill: #0c9139; <!-- Saum -->
+            fill: #COLOR_5; <!-- Saum -->
             }
         </style>
     </defs>

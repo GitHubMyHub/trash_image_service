@@ -11,22 +11,29 @@ const imagePath = './images'
 
 const svgMapping = async (value, color: string) => {
     let svgData, svgBuffer;
+
+    const mainColor = Color(`#${color}`)
+
+    const csl1= mainColor.hex()
+    const csl2= mainColor.darken(0.3).hex()
+    const csl4= mainColor.darken(0.5).hex()
+    const csl5= mainColor.lighten(0.1).hex()
+
     switch (value) {
         case 'trashcan':
-
-            const mainColor = Color(`#${color}`)
-
-            const csl1= mainColor.lighten(0.5).hex()
-
-            console.log(csl1)
-
             svgData = fs.readFileSync(`${imagePath}/trash-can.svg`, 'utf8');
             svgData = svgData.replace('#COLOR_1', csl1)
+            svgData = svgData.replace('#COLOR_2', csl2)
+            svgData = svgData.replace('#COLOR_4', csl4)
+            svgData = svgData.replace('#COLOR_5', csl5)
             svgBuffer = Buffer.from(svgData);
             return await loadImage(svgBuffer);
         case 'bigTrashCan':
             svgData = fs.readFileSync(`${imagePath}/big-trash-can.svg`, 'utf8');
-            svgData = svgData.replace('#PLACEHOLDER_COLOR', `#${color}`)
+            svgData = svgData.replace('#COLOR_1', csl1)
+            svgData = svgData.replace('#COLOR_2', csl2)
+            svgData = svgData.replace('#COLOR_4', csl4)
+            svgData = svgData.replace('#COLOR_5', csl5)
             svgBuffer = Buffer.from(svgData);
             return await loadImage(svgBuffer);
         default:
