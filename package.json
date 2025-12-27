@@ -9,13 +9,13 @@
   "devDependencies": {
     "@types/bun": "latest",
     "canvas": "^3.2.0",
-    "express": "^5.1.0"
+    "express": "^5.2.1"
   },
   "peerDependencies": {
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@types/express": "^5.0.5",
-    "color": "^5.0.2"
+    "@types/express": "^5.0.6",
+    "color": "^5.0.3"
   }
 }
